@@ -4,19 +4,19 @@ public class Node {
     private double R;
     private final double size; //potentially implement later?
 
-    public Node(double S, double I, double R) {
-        S = S;
-        I = I;
-        R = R;
+    public Node(double s, double i, double r) {
+        S = s;
+        I = i;
+        R = r;
         size = S + I + R;
     }
 
-    public Node(double S, double I) {
-        this(S, I, 0.);
+    public Node(double s, double i) {
+        this(s, i, 0.);
     }
 
-    public Node(double S) {
-        this(S, 0., 0.);
+    public Node(double s) {
+        this(s, 0., 0.);
     }
 
     public double S() {
