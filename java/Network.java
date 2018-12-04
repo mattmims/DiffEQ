@@ -46,14 +46,14 @@ public class Network {
         for (int j = 0; j < state.length; j++) {
             if (index == j) {
                 deltaS -= deltaT * beta * currentNode.S() * currentNode.I() /
-                    currentNode.population();
-                deltaI += deltaT * beta * currentNode.S() * currentNode.I() /
-                    currentNode.population();
+                    state[j].population();
+                deltaI += deltaT * beta * currentNode.S() * currentNode.I()/
+                    state[j].population();
             } else {
                 deltaS -= deltaT * currentNode.getGammas()[j] * beta *
-                    currentNode.S() * state[j].I() / currentNode.population();
+                    currentNode.S() * state[j].I() / state[j].population();
                 deltaI += deltaT * currentNode.getGammas()[j] * beta *
-                    currentNode.S() * state[j].I() / currentNode.population();
+                    currentNode.S() * state[j].I() / state[j].population();
             }
         }
         double[] deltas = {deltaS, deltaI, deltaR};
